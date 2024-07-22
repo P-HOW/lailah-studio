@@ -3,7 +3,6 @@ import * as ReactRouter from "react-router-dom";
 import { Editor } from "~/Editor";
 import { Generation } from "~/Generation";
 import { Plugin } from "~/Plugin";
-import { Settings } from "~/Settings";
 
 export function Router() {
   const navigate = Router.useNavigate();
@@ -41,10 +40,6 @@ export namespace Router {
             {
               path: "/edit",
               element: <Editor />,
-            },
-            {
-              path: "/settings",
-              element: <Settings />,
             },
             {
               path: "*",
