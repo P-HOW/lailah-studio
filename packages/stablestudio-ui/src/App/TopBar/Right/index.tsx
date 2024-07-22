@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Shortcut } from "~/Shortcut";
 import { Theme } from "~/Theme";
 
@@ -22,15 +21,6 @@ export const Right = () => {
             <Shortcut.Keys keys={["Meta", "k"]} className="ml-2" />
           </Theme.Button>
         )}
-        <Link to="/settings">
-          <Theme.Button
-            outline
-            label="Settings"
-            labelPlacement="bottom"
-            className="aspect-square h-[30px] w-[30px]"
-            icon={Theme.Icon.Settings}
-          />
-        </Link>
       </>
     </div>
   );
