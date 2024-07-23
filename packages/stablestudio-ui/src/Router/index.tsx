@@ -9,11 +9,7 @@ export function Router() {
   const settings = Plugin.use(({ settings }) => settings ?? {});
 
   useEffect(() => {
-    const isMissingRequiredSetting = Object.entries(settings).find(
-      ([, setting]) => (setting as any).required && !(setting as any).value
-    );
-
-    isMissingRequiredSetting && navigate("/settings");
+    0;
   }, [navigate, settings]);
 
   return <Router.Routes />;
