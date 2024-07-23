@@ -437,19 +437,7 @@ export const createPlugin = StableStudio.createPlugin<{
       localStorage.getItem("stability-apiKey") ?? undefined
     ),
 
-    getStableDiffusionSamplers: () => [
-      { id: "0", name: "DDIM" },
-      { id: "1", name: "DDPM" },
-      { id: "2", name: "K Euler" },
-      { id: "3", name: "K Euler Ancestral" },
-      { id: "4", name: "K Heun" },
-      { id: "5", name: "K DPM 2" },
-      { id: "6", name: "K DPM 2 Ancestral" },
-      { id: "7", name: "K LMS" },
-      { id: "8", name: "K DPM++ 2S Ancestral" },
-      { id: "9", name: "K DPM++ 2M" },
-      { id: "10", name: "K DPM++ SDE" },
-    ],
+    getStableDiffusionSamplers: () => [{ id: "0", name: "DDIM" }],
 
     getStableDiffusionStyles: () => [
       {
