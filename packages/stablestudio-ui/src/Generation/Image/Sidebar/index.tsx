@@ -47,16 +47,8 @@ export namespace Sidebar {
     variant?: "generate" | "editor";
   }) {
     const [settingsOpen, setSettingsOpen] = useState(true);
-    const areStylesEnabled = Generation.Image.Styles.useAreEnabled();
     return (
       <>
-        {areStylesEnabled && (
-          <App.Sidebar.Section divider defaultExpanded padding="sm">
-            <div className="flex flex-col gap-2">
-              <Generation.Image.Style.Dropdown id={id} />
-            </div>
-          </App.Sidebar.Section>
-        )}
         <Generation.Image.Prompt.Sidebar.Section id={id} />
         {variant === "generate" && (
           <Generation.Image.Input.Image.Sidebar.Section id={id} />
