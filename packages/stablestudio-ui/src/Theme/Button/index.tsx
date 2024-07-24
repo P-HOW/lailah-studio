@@ -17,9 +17,7 @@ export function Button(props: Button.Props) {
     <button
       ref={ref}
       style={props.style}
-      onClick={
-        props.disabled || props.loading ? undefined : (props.onClick as never)
-      }
+      onClick={props.onClick as never}
       onDoubleClick={props.onDoubleClick as never}
       className={classes(
         "group relative flex h-fit select-none flex-row items-center justify-center gap-1 whitespace-nowrap rounded align-middle font-light shadow-md duration-150",
@@ -85,7 +83,7 @@ export namespace Button {
     useMemo(
       () =>
         loading || disabled
-          ? "cursor-not-allowed opacity-50"
+          ? "cursor-pointer opacity-100"
           : "cursor-pointer opacity-100",
       [loading, disabled]
     );
