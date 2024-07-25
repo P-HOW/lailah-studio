@@ -19,7 +19,7 @@ export const createPlugin = StableStudio.createPlugin<{
   },
 
   createStableDiffusionImages: async () => {
-    const image = await fetch(`${window.location.origin}/DummyImage.png`);
+    const image = await fetch(`https://i.ibb.co/Ns9PWVS/Dummy-Image.png`);
     const blob = await image.blob();
     const createdAt = new Date();
 

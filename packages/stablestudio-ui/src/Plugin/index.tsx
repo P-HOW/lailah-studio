@@ -1,7 +1,5 @@
 import * as StableStudio from "@stability/stablestudio-plugin";
-import * as StableStudioPluginExample from "@stability/stablestudio-plugin-example";
-import * as StableStudioPluginStability from "@stability/stablestudio-plugin-stability";
-import * as StableStudioPluginWebUI from "@stability/stablestudio-plugin-webui";
+import * as StableStudioPlugin from "@stability/stablestudio-plugin-webui";
 
 import { Environment } from "~/Environment";
 import { Generation } from "~/Generation";
@@ -113,12 +111,7 @@ namespace State {
   };
 
   export const use = GlobalState.create<State>((set) => {
-    const { createPlugin: createRootPlugin } =
-      Environment.get("USE_EXAMPLE_PLUGIN") === "true"
-        ? StableStudioPluginExample
-        : Environment.get("USE_WEBUI_PLUGIN") === "true"
-        ? StableStudioPluginWebUI
-        : StableStudioPluginStability;
+    const { createPlugin: createRootPlugin } = StableStudioPlugin;
 
     return {
       rootPlugin: createRootPlugin({
