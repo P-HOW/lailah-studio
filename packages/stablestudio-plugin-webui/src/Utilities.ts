@@ -40,10 +40,7 @@ export async function setOptions(baseUrl: string | undefined, options: any) {
   return await optionsResponse.json();
 }
 
-export async function getImageInfo(
-  baseUrl: string | null,
-  base64image: any
-) {
+export async function getImageInfo(baseUrl: string | null, base64image: any) {
   const imageInfoResponse = await fetch(`${baseUrl}/sdapi/v1/png-info`, {
     method: "POST",
     headers: {
