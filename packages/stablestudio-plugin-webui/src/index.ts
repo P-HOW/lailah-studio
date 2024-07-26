@@ -245,7 +245,7 @@ export const createPlugin = StableStudio.createPlugin<{
   let webuiHostUrl = localStorage.getItem("webui-host-url");
 
   if (!webuiHostUrl || webuiHostUrl === "") {
-    webuiHostUrl = "http://127.0.0.1:7861";
+    webuiHostUrl = "http://127.0.0.1:7860";
   }
 
   return {
@@ -343,10 +343,11 @@ export const createPlugin = StableStudio.createPlugin<{
       baseUrl: {
         type: "string",
         title: "Host URL",
-        placeholder: "http://127.0.0.1:7861",
-        value: localStorage.getItem("webui-host-url") ?? "",
+        placeholder: "http://127.0.0.1:7860",
+        value:
+          localStorage.getItem("webui-host-url") ?? "http://127.0.0.1:7860",
         description:
-          "The URL of the `stable-diffusion-webui` host, usually http://127.0.0.1:7861",
+          "The URL of the `stable-diffusion-webui` host, usually http://127.0.0.1:7860",
       },
 
       upscaler: {
