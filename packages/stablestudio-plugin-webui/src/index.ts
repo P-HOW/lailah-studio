@@ -246,7 +246,7 @@ export const createPlugin = StableStudio.createPlugin<{
 
   if (!webuiHostUrl || webuiHostUrl === "") {
     webuiHostUrl =
-      "https://3e77-83-108-65-42.ngrok-free.app";
+      "https://33bc-2001-4640-33b0-0-a0d6-87f2-8d56-3674.ngrok-free.app";
   }
 
   return {
@@ -345,12 +345,12 @@ export const createPlugin = StableStudio.createPlugin<{
         type: "string",
         title: "Host URL",
         placeholder:
-          "https://3e77-83-108-65-42.ngrok-free.app",
+          "https://33bc-2001-4640-33b0-0-a0d6-87f2-8d56-3674.ngrok-free.app",
         value:
           localStorage.getItem("webui-host-url") ??
-          "https://3e77-83-108-65-42.ngrok-free.app",
+          "https://33bc-2001-4640-33b0-0-a0d6-87f2-8d56-3674.ngrok-free.app",
         description:
-          "The URL of the `stable-diffusion-webui` host, usually https://3e77-83-108-65-42.ngrok-free.app",
+          "The URL of the `stable-diffusion-webui` host, usually https://33bc-2001-4640-33b0-0-a0d6-87f2-8d56-3674.ngrok-free.app",
       },
 
       upscaler: {
