@@ -212,7 +212,12 @@ export const createPlugin = StableStudio.createPlugin<{
       },
 
       getStableDiffusionModels: async () => {
-        const response = await fetch(`${webuiHostUrl}/sdapi/v1/sd-models`);
+        const response = await fetch(`${webuiHostUrl}/sdapi/v1/sd-models`, {
+          method: "GET",
+          headers: {
+            "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
+          },
+        });
         const responseData = await response.json();
 
         return responseData.map((model: any) => ({
