@@ -22,6 +22,7 @@ export async function fetchOptions(baseUrl: string | undefined) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
     },
   });
 

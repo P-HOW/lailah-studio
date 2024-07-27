@@ -150,6 +150,7 @@ export const createPlugin = StableStudio.createPlugin<{
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
             },
             body: JSON.stringify(data),
           }
@@ -227,7 +228,16 @@ export const createPlugin = StableStudio.createPlugin<{
       },
 
       getStatus: async () => {
-        const optionsResponse = await fetch(`${webuiHostUrl}/sdapi/v1/options`);
+        const optionsResponse = await fetch(
+          `${webuiHostUrl}/sdapi/v1/options`,
+          {
+            method: "GET",
+            headers: {
+              "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
+            },
+          }
+        );
+
         const hasWebuiHistoryPlugin = await testForHistoryPlugin(
           `${webuiHostUrl}`
         );
@@ -251,7 +261,7 @@ export const createPlugin = StableStudio.createPlugin<{
 
   if (!webuiHostUrl || webuiHostUrl === "") {
     webuiHostUrl =
-      "https://0410-2001-4640-33b0-0-5060-5157-677a-f309.ngrok-free.app/";
+      "https://c99f-2001-4640-33b0-0-217b-97c4-8473-1d91.ngrok-free.app";
   }
 
   return {
@@ -271,7 +281,12 @@ export const createPlugin = StableStudio.createPlugin<{
     },
 
     getStableDiffusionSamplers: async () => {
-      const response = await fetch(`${webuiHostUrl}/sdapi/v1/samplers`);
+      const response = await fetch(`${webuiHostUrl}/sdapi/v1/samplers`, {
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
+        },
+      });
       const responseData = await response.json();
 
       return responseData.map((sampler: any) => ({
@@ -287,6 +302,7 @@ export const createPlugin = StableStudio.createPlugin<{
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
           },
           body: JSON.stringify({
             limit: get().settings.historyImagesCount.value,
@@ -349,12 +365,12 @@ export const createPlugin = StableStudio.createPlugin<{
         type: "string",
         title: "Host URL",
         placeholder:
-          "https://0410-2001-4640-33b0-0-5060-5157-677a-f309.ngrok-free.app",
+          "https://c99f-2001-4640-33b0-0-217b-97c4-8473-1d91.ngrok-free.app",
         value:
           localStorage.getItem("webui-host-url") ??
-          "https://0410-2001-4640-33b0-0-5060-5157-677a-f309.ngrok-free.app",
+          "https://c99f-2001-4640-33b0-0-217b-97c4-8473-1d91.ngrok-free.app",
         description:
-          "The URL of the `stable-diffusion-webui` host, usually https://a474-2001-4640-33b0-0-5060-5157-677a-f309.ngrok-free.app",
+          "The URL of the `stable-diffusion-webui` host, usually https://c59a-2001-4640-33b0-0-217b-97c4-8473-1d91.ngrok-free.app",
       },
 
       upscaler: {
