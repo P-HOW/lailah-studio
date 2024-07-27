@@ -150,7 +150,6 @@ export const createPlugin = StableStudio.createPlugin<{
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
             },
             body: JSON.stringify(data),
           }
