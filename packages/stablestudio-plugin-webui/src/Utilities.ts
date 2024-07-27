@@ -47,6 +47,7 @@ export async function getImageInfo(baseUrl: string | null, base64image: any) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
     },
     body: JSON.stringify({ image: base64image }),
   });
@@ -89,6 +90,7 @@ export async function testForHistoryPlugin(webuiHostUrl: string) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true", // Add this header to bypass the ngrok browser warning
       },
       body: JSON.stringify({
         limit: 1,
